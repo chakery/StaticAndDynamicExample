@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZiG-Ij-IgR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wi-Fi-->
+        <scene sceneID="Fe6-X7-pgo">
+            <objects>
+                <tableViewController id="nBE-9U-i54" customClass="MainTableViewController" customModule="StaticAndDynamicExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="NaK-Zj-oWD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="XFN-sj-MiG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mQu-9Q-xEh">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mQu-9Q-xEh" id="vIK-mO-rAb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wi-Fi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lC-55-oTP">
+                                                    <rect key="frame" x="44" y="11" width="100" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="5bc-Oy-QNF"/>
+                                                        <constraint firstAttribute="width" constant="100" id="iKy-hs-9Dt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsK-63-11R">
+                                                    <rect key="frame" x="537" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lsK-63-11R" firstAttribute="centerY" secondItem="vIK-mO-rAb" secondAttribute="centerY" id="1Fi-vW-YfP"/>
+                                                <constraint firstItem="2lC-55-oTP" firstAttribute="leading" secondItem="vIK-mO-rAb" secondAttribute="leading" constant="44" id="ayc-Hb-d5c"/>
+                                                <constraint firstItem="2lC-55-oTP" firstAttribute="centerY" secondItem="vIK-mO-rAb" secondAttribute="centerY" id="jpm-Sq-t2x"/>
+                                                <constraint firstAttribute="trailing" secondItem="lsK-63-11R" secondAttribute="trailing" constant="14" id="odr-JA-sdM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="Zf7-Ej-B62">
+                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zf7-Ej-B62" id="dCa-rj-0ki">
+                                            <rect key="frame" x="0.0" y="0.0" width="553" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chakery-wifi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVI-z9-1Iw">
+                                                    <rect key="frame" x="44" y="11" width="87" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="NsW-Qq-FCg"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="U0n-Kf-CrV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-xO-Hn4">
+                                                    <rect key="frame" x="14" y="14" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="6cT-6i-Fhx"/>
+                                                        <constraint firstAttribute="width" constant="16" id="zVS-4l-Atg"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="grl-Nm-TtU">
+                                                    <rect key="frame" x="537" y="14" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="BVA-8h-IHx"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="l4s-if-A3t"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="T3A-qs-RvO">
+                                                    <rect key="frame" x="511" y="14" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="R98-FN-T22"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="siG-XB-nQV"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="T3A-qs-RvO" firstAttribute="centerY" secondItem="dCa-rj-0ki" secondAttribute="centerY" id="0SO-Lg-tC1"/>
+                                                <constraint firstItem="1ff-xO-Hn4" firstAttribute="centerY" secondItem="dCa-rj-0ki" secondAttribute="centerY" id="1qt-uK-NMG"/>
+                                                <constraint firstItem="rVI-z9-1Iw" firstAttribute="leading" secondItem="dCa-rj-0ki" secondAttribute="leading" constant="44" id="HmG-Qw-T1k"/>
+                                                <constraint firstItem="rVI-z9-1Iw" firstAttribute="centerY" secondItem="dCa-rj-0ki" secondAttribute="centerY" id="Pq4-dY-wJv"/>
+                                                <constraint firstItem="grl-Nm-TtU" firstAttribute="leading" secondItem="T3A-qs-RvO" secondAttribute="trailing" constant="10" id="QGF-Ud-BSl"/>
+                                                <constraint firstItem="grl-Nm-TtU" firstAttribute="centerY" secondItem="dCa-rj-0ki" secondAttribute="centerY" id="QcO-cQ-str"/>
+                                                <constraint firstItem="rVI-z9-1Iw" firstAttribute="leading" secondItem="dCa-rj-0ki" secondAttribute="leading" constant="14" id="Qwg-Wk-SEF"/>
+                                                <constraint firstItem="rVI-z9-1Iw" firstAttribute="leading" secondItem="dCa-rj-0ki" secondAttribute="leadingMargin" constant="44" id="ZkZ-wF-32Z"/>
+                                                <constraint firstItem="1ff-xO-Hn4" firstAttribute="leading" secondItem="dCa-rj-0ki" secondAttribute="leading" constant="14" id="mzn-XI-O1x"/>
+                                                <constraint firstAttribute="trailing" secondItem="grl-Nm-TtU" secondAttribute="trailing" id="u4Q-aC-tOs"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Qwg-Wk-SEF"/>
+                                                    <exclude reference="ZkZ-wF-32Z"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="选择网络..." id="pzH-Ym-eLL">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WiFiTableViewCell" id="WXw-OR-sd0">
+                                        <rect key="frame" x="0.0" y="238" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WXw-OR-sd0" id="D4v-FV-cuj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection footerTitle="将自动加入已知网络。如果没有已知网络，您必须手动选择。" id="wpy-g1-EUs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OKb-aU-DZD">
+                                        <rect key="frame" x="0.0" y="318" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OKb-aU-DZD" id="amH-ev-6TI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="询问是否加入网络" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6K-wZ-DHe">
+                                                    <rect key="frame" x="14" y="11" width="140" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="5sS-8n-DGH"/>
+                                                        <constraint firstAttribute="height" constant="21" id="yje-0E-ym9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puP-rl-vmX">
+                                                    <rect key="frame" x="537" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="puP-rl-vmX" firstAttribute="centerY" secondItem="amH-ev-6TI" secondAttribute="centerY" id="5hD-aF-kZV"/>
+                                                <constraint firstItem="F6K-wZ-DHe" firstAttribute="centerY" secondItem="amH-ev-6TI" secondAttribute="centerY" id="61k-9q-tMS"/>
+                                                <constraint firstAttribute="trailing" secondItem="puP-rl-vmX" secondAttribute="trailing" constant="14" id="FD5-7f-W1s"/>
+                                                <constraint firstItem="F6K-wZ-DHe" firstAttribute="leading" secondItem="amH-ev-6TI" secondAttribute="leading" constant="14" id="sS6-m7-g2e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nBE-9U-i54" id="hD8-52-zYa"/>
+                            <outlet property="delegate" destination="nBE-9U-i54" id="Obn-Uo-Nb3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Wi-Fi" id="njZ-2K-ZKr"/>
+                    <connections>
+                        <outlet property="didSelectedWiFiLabel" destination="rVI-z9-1Iw" id="frH-MG-B5d"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5e-ho-aeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613" y="573"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I6j-Cw-7y1">
+            <objects>
+                <navigationController id="ZiG-Ij-IgR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q06-xR-9lA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nBE-9U-i54" kind="relationship" relationship="rootViewController" id="6C2-fk-t7M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2HM-tb-Lme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="573"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="check" width="16" height="16"/>
+        <image name="lock" width="16" height="16"/>
+        <image name="wifi" width="16" height="16"/>
+    </resources>
+</document>
