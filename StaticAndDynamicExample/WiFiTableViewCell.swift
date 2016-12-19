@@ -13,15 +13,15 @@ class WiFiTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.accessoryType = .DetailButton
+        self.accessoryType = .detailButton
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
     }
     
-    func dataBind(wifiName: String) {
+    func dataBind(_ wifiName: String) {
         self.wifiNameLabel.text = wifiName
     }
 }

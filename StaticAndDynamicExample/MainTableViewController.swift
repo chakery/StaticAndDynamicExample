@@ -9,39 +9,12 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-    private let identifier = String(WiFiTableViewCell)
-    private let NibName = String(WiFiTableViewCell)
-    private var datasource: [String] = []
+    fileprivate let identifier = String(describing: WiFiTableViewCell.self)
+    fileprivate let NibName = String(describing: WiFiTableViewCell.self)
+    fileprivate var datasource: [String] = []
     
     @IBOutlet weak var didSelectedWiFiLabel: UILabel!
     
-    
-    
-    /**
-     初始化数据源（模拟请求网络，3秒后返回数据并刷新列表）
-     */
-    func intiDatasource() {
-        let duration = dispatch_time(DISPATCH_TIME_NOW, (Int64)(3 * NSEC_PER_SEC))
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        dispatch_after(duration, queue) { 
-            let wifiName = "Chakery-WiFi-"
-            (1...6).forEach { [weak self] i in
-                guard let `self` = self else { return }
-                self.datasource.append(wifiName + "\(i)")
-            }
-            dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Bottom)
-            }
-        }
-    }
-    
-    /**
-     注册Cell
-     */
-    func registerTableViewCell() {
-        let nib = UINib(nibName: NibName, bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: identifier)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,39 +26,57 @@ class MainTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /// 初始化数据源（模拟请求网络，3秒后返回数据并刷新列表）
+    func intiDatasource() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            let wifiName = "Chakery-WiFi-"
+            (1...30).forEach { [weak self] i in
+                guard let `self` = self else { return }
+                self.datasource.append(wifiName + "\(i)")
+            }
+            self.tableView.reloadSections(IndexSet(integer: 1), with: .bottom)
+        }
+    }
+    
+    /// 注册Cell
+    func registerTableViewCell() {
+        let nib = UINib(nibName: NibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: identifier)
+    }
+    
 }
 
 // MARK: - 静态Cell与动态cell混合使用时，需要实现以下方法
 extension MainTableViewController {
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? WiFiTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? WiFiTableViewCell
             cell?.dataBind(datasource[indexPath.row])
             return cell!
         }
-        return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        return super.tableView(tableView, cellForRowAt: indexPath)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return datasource.count
         }
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
-    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
         if indexPath.section == 1 {
-            return super.tableView(tableView, indentationLevelForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 1))
+            return super.tableView(tableView, indentationLevelForRowAt: IndexPath(row: 0, section: 1))
         }
-        return super.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath)
+        return super.tableView(tableView, indentationLevelForRowAt: indexPath)
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
             return 44
         }
-        return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        return super.tableView(tableView, heightForRowAt: indexPath)
     }
     
 }
@@ -93,12 +84,12 @@ extension MainTableViewController {
 // MARK: - 其他方法
 extension MainTableViewController {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         didSelectedWiFiAtIndexPath(indexPath)
     }
     
-    func didSelectedWiFiAtIndexPath(indexPath: NSIndexPath) {
+    func didSelectedWiFiAtIndexPath(_ indexPath: IndexPath) {
         guard indexPath.section == 1 else { return }
         guard indexPath.row < self.datasource.count else { return }
         let name = datasource[indexPath.row]
